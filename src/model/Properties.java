@@ -89,7 +89,16 @@ public class Properties
 	
 	public String toString()
 	{
-		String description = "Your movie is called " + Title + ". It runs for " + RunTime + " minutes. It was released in " + YearReleased + ".";
+//		if (IsComedy == false)
+//		{
+			String description = "Your movie is called " + Title + ". It runs for " + RunTime + " minutes. It was released in " + YearReleased + ".";
+
+//		}
+//		else
+//		{
+//			String description = "Your movie is called " + Title + ". It runs for " + RunTime + " minutes. It was released in " + YearReleased + ".";
+//
+//		}
 
 		return description;
 	}

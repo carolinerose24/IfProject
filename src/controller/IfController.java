@@ -23,7 +23,15 @@ public class IfController
 	 */
 	public IfController()
 	{
+//		String title111 = JOptionPane.showInputDialog("What is the title of your movie?");
+//		String YearReleased111 = JOptionPane.showInputDialog("What year was it released?");
+//		String RunTime111 = JOptionPane.showInputDialog("What is the run time of your movie?");
+//		String Comedy111 = JOptionPane.showInputDialog("Is your movie a comedy?");
+
+		
+		
 		myProperties = new Properties("The Man Who Knew Too Little", 1997, 94.0, true );
+		//myProperties = new Properties("The Man Who Knew Too Little", 1997, 94.0, true );
 	}
 	
 	
