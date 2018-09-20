@@ -3,18 +3,39 @@ package model;
 public class Properties
 {
 
-	//----------------------------Data Members--------------------------------
+	//----------------------------Data Members--------------------------------(Declaration Section)
+	//Also called instance variable
+	//These are special and get a 'Default' value
+	//All numbers => 0
+	//All booleans => false
+	//All Objects => null
+	
+	
 	private String Title;
 	private int YearReleased;
 	private double RunTime;
 	private boolean IsComedy;
 	
-	
-	public Properties()
+	/**
+	 * Default constructor for after the fact customization.
+	 * (Don't know the info yet)
+	 * Initializing data members with 'bad' values to be changed.
+	 */
+	public Properties()//CONSTRUCTOR ONLY NEED THE DEFAULT ONE.
 	{
-		
+		Title = "Monty Python and the Holy Grail";
+		YearReleased = 1969;
+		RunTime = 91.0;
+		IsComedy = true;
 	}
 	
+	/**
+	 * Better Constructor when I know info for the Properties object. THIS IS WHY YOU HAVE 2 CONSTRUCTORS IN THE MODEL.
+	 * @param Title
+	 * @param YearReleased
+	 * @param RunTime
+	 * @param IsComedy
+	 */
 	public Properties(String Title, int YearReleased, double RunTime, boolean IsComedy)
 	{
 		this.Title = Title;
@@ -25,7 +46,7 @@ public class Properties
 	
 	
 	//----------------------------Getters------------------------------------------
-	
+
 	public String getTitle()
 	{
 		return Title;
@@ -69,8 +90,7 @@ public class Properties
 	public String toString()
 	{
 		String description = "Your movie is called " + Title + ". It runs for " + RunTime + " minutes. It was released in " + YearReleased + ".";
-		
-		
+
 		return description;
 	}
 	
