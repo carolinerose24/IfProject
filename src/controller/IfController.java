@@ -58,6 +58,13 @@ public class IfController
 		//(for how many times something executes--include 0 when counting how many times something happens)
 		
 		}
+		
+		for (int loop=0; loop < 30; loop +=2)
+		{
+			JOptionPane.showMessageDialog(null, "The loop value is " + loop); //will print 0,2,4,6,8...28 (not 30)
+		}
+		
+		
 	}
 	
 	private void Looooop2()
@@ -73,7 +80,16 @@ public class IfController
 	}
 	
 	
+	private void askUser()
+	{
+		String response = JOptionPane.showInputDialog("What is the distance?");
+		
+		while (!validDouble(response))
+		{
+			response = JOptionPane.showInputDialog(null, "Type a VALID number for distance");
+		}
 	
+	}
 	
 	
 	
