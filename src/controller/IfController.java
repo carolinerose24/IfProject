@@ -13,7 +13,9 @@ public class IfController
 	 */
 	public void start ()
 	{
-		JOptionPane.showMessageDialog(null, myProperties);
+		Looooop2();
+		myLooooop();
+		//JOptionPane.showMessageDialog(null, myProperties);
 	}
 	
 	
@@ -34,6 +36,41 @@ public class IfController
 		//myProperties = new Properties("The Man Who Knew Too Little", 1997, 94.0, true );
 	}
 	
+	private void myLooooop() //demo --can only be called by IfController because is private
+	{
+		boolean isDone = false; //DEFINE VARIABLES BEFORE LOOP (INITIALIZE)
+		int count = 0;
+		
+		while(!isDone) //THE CONDITION
+			//executes for as long as the condition is true--as long as isDone is false => so infinite
+		{
+			JOptionPane.showMessageDialog(null, "loops?");
+			//must eventually change the loop variable to leave it
+			//isDone = true;//allows loop to end after one time
+			
+			count++; //THE INCREMENT
+			//count = count +1, count-- => count = count -1
+			if (count >= 5)
+			{
+				isDone = true;
+			}
+		//oboe- off by one error--fix with a <= OR
+		//(for how many times something executes--include 0 when counting how many times something happens)
+		
+		}
+	}
+	
+	private void Looooop2()
+	{
+		int bananacount = 0;
+		while (bananacount < 5)
+		{
+			JOptionPane.showMessageDialog(null, "Press enter to gain a banana. You currently have " + bananacount + " banana(s).");
+			bananacount++;
+		}
+		JOptionPane.showMessageDialog(null, "You have " + bananacount +  " bananas.");
+
+	}
 	
 	
 	
