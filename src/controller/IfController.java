@@ -13,8 +13,9 @@ public class IfController
 	 */
 	public void start ()
 	{
-		Looooop2();
-		myLooooop();
+		askUser();
+		//Looooop2();
+		//myLooooop();
 		//JOptionPane.showMessageDialog(null, myProperties);
 	}
 	
@@ -34,6 +35,40 @@ public class IfController
 		
 		myProperties = new Properties("The Man Who Knew Too Little", 1997, 94.0, true );
 		//myProperties = new Properties("The Man Who Knew Too Little", 1997, 94.0, true );
+	}
+	
+	public boolean validInt(String maybeInt)
+	{
+		boolean isValid = false;
+		
+		try
+		{
+			Integer.parseInt(maybeInt);
+			isValid = true;
+		}
+		catch(NumberFormatException error) //type, variable -- formal parameter
+		{
+			JOptionPane.showMessageDialog(null, "Put in an integer");
+		}
+		
+		
+		return isValid;
+	}
+	
+	
+	public boolean validDouble(String maybeDouble)
+	{
+		boolean isValid = false;
+		try
+		{
+			Double.parseDouble(maybeDouble); //String to double conversion
+			isValid=true;
+		}
+		catch(NumberFormatException error)
+		{
+			JOptionPane.showMessageDialog(null, "Put in a double");
+		}
+		return isValid;
 	}
 	
 	private void myLooooop() //demo --can only be called by IfController because is private
@@ -82,14 +117,50 @@ public class IfController
 	
 	private void askUser()
 	{
-		String response = JOptionPane.showInputDialog("What is the distance?");
+		String answeryes = "yes";
+		String responseTitle = JOptionPane.showInputDialog("What is the title?");
+//---------------------------------run time------------------------------------------------------
+		String responseRT = JOptionPane.showInputDialog("What is the run time?"); //ask
+		Properties RunTime = new Properties ();
 		
-		while (!validDouble(response))
+		while (!validDouble(responseRT))//repeat until correctly done
 		{
-			response = JOptionPane.showInputDialog(null, "Type a VALID number for distance");
+			responseRT = JOptionPane.showInputDialog(null, "Type a VALID number for run time.");
 		}
+		RunTime.setRunTime(Double.parseDouble(responseRT)); //changing string to double once you have verified it is correct--so you can actually use it
+		
+//---------------------------------year released------------------------------------------------------
+		String responseYR = JOptionPane.showInputDialog("What year was it released?");
+		Properties YearReleased = new Properties();
+		
+		while (!validInt(responseYR))
+		{
+			responseYR = JOptionPane.showInputDialog("Type a VALID year.");
+		}
+		YearReleased.setYearReleased(Integer.parseInt(responseYR));
+		
+//----------------------is comedy-----------------------------------------------------
+		String responseIC = JOptionPane.showInputDialog("Is the movie a comedy? (yes/no)");
+		if (responseIC.equals(answeryes))
+		{
+			JOptionPane.showMessageDialog(null, "The title is "+ responseTitle + ". It runs for "+ responseRT + " minutes. It was released in " + responseYR + " . It is a comedy.");//assign
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(null, "The title is "+ responseTitle + ". It runs for "+ responseRT + " minutes. It was released in \" + responseYR + \" . It is not a comedy.\"");
+		}
+		
+		
 	
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
