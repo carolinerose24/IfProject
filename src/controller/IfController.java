@@ -13,8 +13,8 @@ public class IfController
 	 */
 	public void start ()
 	{
-		askUser();
-		//Looooop2();
+		//askUser();
+		Looooop2();
 		//myLooooop();
 		//JOptionPane.showMessageDialog(null, myProperties);
 	}
@@ -147,7 +147,7 @@ public class IfController
 		}
 		else
 		{
-			JOptionPane.showMessageDialog(null, "The title is "+ responseTitle + ". It runs for "+ responseRT + " minutes. It was released in \" + responseYR + \" . It is not a comedy.\"");
+			JOptionPane.showMessageDialog(null, "The title is "+ responseTitle + ". It runs for "+ responseRT + " minutes. It was released in " + responseYR + " . It is not a comedy.\"");
 		}
 		
 		
