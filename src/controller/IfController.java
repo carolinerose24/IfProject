@@ -13,10 +13,12 @@ public class IfController
 	 */
 	public void start ()
 	{
-		//askUser();
-		Looooop2();
+		//forPractice();
+		askUser();
+		//Looooop2();
 		//myLooooop();
-		//JOptionPane.showMessageDialog(null, myProperties);
+				//JOptionPane.showMessageDialog(null, myProperties); //THIS WOULD PRINT THE DEFAULT VALUES!!!
+		
 	}
 	
 	
@@ -89,14 +91,19 @@ public class IfController
 			{
 				isDone = true;
 			}
-		//oboe- off by one error--fix with a <= OR
+		//oboe- off by one error--fix with a <= OR ((loop goes 1 extra or less time))
 		//(for how many times something executes--include 0 when counting how many times something happens)
 		
 		}
 		
-		for (int loop=0; loop < 30; loop +=2)
+		for (int loop=0; loop < 30; loop +=2) //can add by anything example +=18
 		{
 			JOptionPane.showMessageDialog(null, "The loop value is " + loop); //will print 0,2,4,6,8...28 (not 30)
+		}
+		
+		for (int l = 16; l >= 2; l = (l/2))
+		{
+			JOptionPane.showMessageDialog(null, "There are now " + l + " teams.");
 		}
 		
 		
@@ -115,48 +122,77 @@ public class IfController
 	}
 	
 	
-	private void askUser()
+	private void askUser() //this is the user input
 	{
+		Properties titleStuff1 = new Properties();
+		
 		String answeryes = "yes";
 		String responseTitle = JOptionPane.showInputDialog("What is the title?");
 //---------------------------------run time------------------------------------------------------
 		String responseRT = JOptionPane.showInputDialog("What is the run time?"); //ask
-		Properties RunTime = new Properties ();
+		
 		
 		while (!validDouble(responseRT))//repeat until correctly done
 		{
 			responseRT = JOptionPane.showInputDialog(null, "Type a VALID number for run time.");
 		}
-		RunTime.setRunTime(Double.parseDouble(responseRT)); //changing string to double once you have verified it is correct--so you can actually use it
-		
 //---------------------------------year released------------------------------------------------------
 		String responseYR = JOptionPane.showInputDialog("What year was it released?");
-		Properties YearReleased = new Properties();
 		
 		while (!validInt(responseYR))
 		{
 			responseYR = JOptionPane.showInputDialog("Type a VALID year.");
 		}
-		YearReleased.setYearReleased(Integer.parseInt(responseYR));
+
 		
 //----------------------is comedy-----------------------------------------------------
 		String responseIC = JOptionPane.showInputDialog("Is the movie a comedy? (yes/no)");
 		if (responseIC.equals(answeryes))
 		{
-			JOptionPane.showMessageDialog(null, "The title is "+ responseTitle + ". It runs for "+ responseRT + " minutes. It was released in " + responseYR + " . It is a comedy.");//assign
+			boolean responseIC1 = true;
+			titleStuff1.setTitle(responseTitle);
+			titleStuff1.setRunTime(Double.parseDouble(responseRT)); //changing string to double once you have verified it is correct--so you can actually use it
+			titleStuff1.setYearReleased(Integer.parseInt(responseYR));
+			titleStuff1.setIsComedy(responseIC1);
+			JOptionPane.showMessageDialog(null, titleStuff1);
+			//JOptionPane.showMessageDialog(null, "The title is "+ responseTitle + ". It runs for "+ responseRT + " minutes. It was released in " + responseYR + " . It is a comedy.");//assign
 		}
 		else
 		{
-			JOptionPane.showMessageDialog(null, "The title is "+ responseTitle + ". It runs for "+ responseRT + " minutes. It was released in " + responseYR + " . It is not a comedy.\"");
+			boolean responseIC1 = false;
+			titleStuff1.setTitle(responseTitle);
+			titleStuff1.setRunTime(Double.parseDouble(responseRT)); //changing string to double once you have verified it is correct--so you can actually use it
+			titleStuff1.setYearReleased(Integer.parseInt(responseYR));
+			titleStuff1.setIsComedy(responseIC1);
+			JOptionPane.showMessageDialog(null, titleStuff1);
+
+			//JOptionPane.showMessageDialog(null, "The title is "+ responseTitle + ". It runs for "+ responseRT + " minutes. It was released in " + responseYR + " . It is not a comedy.");
 		}
 		
-		
+
+	}
 	
+	private void askUser1()
+	{
+		for (int i = 1; i < 4; i++)
+		{
+			
+		}
+	}
+	
+	private void forPractice() //for loop- always a counting loop (like Simon says- do it 3 times)-pass two streets then turn left
+	{							//while-go until you reach something (go to end of street then turn left)
+//		for (int i = 1; i < 4; i++)
+//		{
+			askUser();
+//		}
 	}
 	
 	
-	
-	
+	//Analogy-
+	//model is what you can see
+	//controller-director-not seen in the movie
+	//all work goes 
 	
 	
 	
