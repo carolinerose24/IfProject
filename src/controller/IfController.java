@@ -128,25 +128,48 @@ public class IfController
 		
 		String answeryes = "yes";
 		String responseTitle = JOptionPane.showInputDialog("What is the title?");
+		if (responseTitle == null || responseTitle.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "You either pressed cancel, the x, or typed nothing!");
+			responseTitle = JOptionPane.showInputDialog("What is the title?");
+		}
 //---------------------------------run time------------------------------------------------------
 		String responseRT = JOptionPane.showInputDialog("What is the run time?"); //ask
 		
 		
-		while (!validDouble(responseRT))//repeat until correctly done
+		while (responseRT == null || !validDouble(responseRT))//repeat until correctly done
 		{
 			responseRT = JOptionPane.showInputDialog(null, "Type a VALID number for run time.");
+		}
+		if (responseRT == null || responseRT.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "You either pressed cancel, the x, or typed nothing!");
+			responseRT = JOptionPane.showInputDialog("What is the run time?");
 		}
 //---------------------------------year released------------------------------------------------------
 		String responseYR = JOptionPane.showInputDialog("What year was it released?");
 		
-		while (!validInt(responseYR))
+		while (responseYR == null || !validInt(responseYR))
 		{
 			responseYR = JOptionPane.showInputDialog("Type a VALID year.");
 		}
+		if (responseYR == null || responseYR.equals(""))
+		{		
+			responseYR = JOptionPane.showInputDialog("What year was it released?");
+			JOptionPane.showMessageDialog(null, "You either pressed cancel, the x, or typed nothing!");
+		}
 
+		
 		
 //----------------------is comedy-----------------------------------------------------
 		String responseIC = JOptionPane.showInputDialog("Is the movie a comedy? (yes/no)");
+
+		if (responseIC == null || responseIC.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "You either pressed cancel, the x, or typed nothing!");
+			responseIC = JOptionPane.showInputDialog("Is the movie a comedy? (yes/no)");
+
+		}
 		if (responseIC.equals(answeryes))
 		{
 			boolean responseIC1 = true;
@@ -164,12 +187,22 @@ public class IfController
 			titleStuff1.setRunTime(Double.parseDouble(responseRT)); //changing string to double once you have verified it is correct--so you can actually use it
 			titleStuff1.setYearReleased(Integer.parseInt(responseYR));
 			titleStuff1.setIsComedy(responseIC1);
+			
+			
+			
 			JOptionPane.showMessageDialog(null, titleStuff1);
 
 			//JOptionPane.showMessageDialog(null, "The title is "+ responseTitle + ". It runs for "+ responseRT + " minutes. It was released in " + responseYR + " . It is not a comedy.");
 		}
 		
 
+		
+		
+		
+
+
+
+		
 	}
 	
 	private void askUser1()

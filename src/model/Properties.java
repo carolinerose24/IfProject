@@ -92,6 +92,7 @@ public class Properties
 		if (IsComedy == false)
 		{
 			String description = "Your movie is called " + Title + ". It runs for " + RunTime + " minutes. It was released in " + YearReleased + ". It is not a comedy.";
+			//description += "you can add extra text with this on a different line";
 			return description;
 
 		}
