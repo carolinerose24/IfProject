@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
 import model.Properties;
@@ -13,16 +15,138 @@ public class IfController
 	 */
 	public void start()
 	{
+		
+		listExample();
+		listExample2();
+		
 //		start1();
 		// forPractice();
 		// askUser();
-		 Looooop2();
-		 myLooooop();
+	//	 Looooop2();
+		// myLooooop();
 	//	 JOptionPane.showMessageDialog(null, myProperties); //THIS WOULD PRINT THE
 		// DEFAULT VALUES!!!
+		 
 
 	}
 
+	private void list2()
+	{
+		ArrayList<Properties> nameOfTheList = new ArrayList <Properties>();
+		
+		Properties firstThing = new Properties();
+		Properties secondThing = new Properties();
+		
+		nameOfTheList.add(firstThing);
+		nameOfTheList.add(secondThing);
+		
+		
+		for (int index = nameOfTheList.size() -1; index >= 0; index -= 1)
+		{
+			Properties currentP = nameOfTheList.get(index);
+			nameOfTheList.remove(firstThing);
+		}
+		
+			
+	}
+	
+	private void listExample()
+	{
+		ArrayList <String> alist = new ArrayList<String>();//doesn't have to be string- can be Duck, or Mouse, or Apostrophe
+		alist.add("banana"); //adds "banana" to the end of the list
+		alist.add("strawberry");
+		alist.add("blueberry");
+		alist.add("blackberry");
+		
+		JOptionPane.showMessageDialog(null,alist);
+		
+		alist.add(2, "apple"); //adds it in spot 2 (3rd position)
+		
+		JOptionPane.showMessageDialog(null,alist);
+		
+		
+		alist.remove("blueberry");
+		alist.remove(0); //removes 1st element
+		JOptionPane.showMessageDialog(null,alist);
+		
+		for (String str:alist)
+			JOptionPane.showMessageDialog(null, str); //shows each individually
+		
+		alist.set(1, "coconut"); //alist.set(index, element) --replaces
+		
+		int numberOfItems = alist.size();
+		alist.clear();
+
+	
+	}
+	
+	private void listExample2()
+	{
+		ArrayList<Integer> arrlist = new ArrayList<Integer>();
+		arrlist.add(15);
+		arrlist.add(25);
+		arrlist.add(35);
+		arrlist.add(45);
+
+		for (int counter = 0; counter < arrlist.size(); counter++) //for loop
+		{
+			JOptionPane.showMessageDialog(null, arrlist.get(counter));
+		}
+		//advanced for loop
+		for (Integer num : arrlist)
+		{
+			JOptionPane.showMessageDialog(null, num);
+		}
+		
+	}
+	
+	
+	private void listStuff()
+	{
+		 ArrayList<Properties> myThings = new ArrayList <Properties>();
+		 
+		 ArrayList<Integer> myNums = new ArrayList<Integer>();
+		 
+		 Properties thisThing = new Properties();
+		 Properties thisThing1 = new Properties();
+		 Properties thisThing2 = new Properties();
+		 
+		 myThings.add(thisThing);
+		 myThings.add(thisThing1);
+		 myThings.add(thisThing2);
+		 
+		 
+		 //standard forward loop
+		 for (int index=0; index < myThings.size() ; index +=1)
+		 {
+			 JOptionPane.showMessageDialog(null, myThings.get(index).getTitle());
+
+			 
+			 Properties currentProperties = myThings.get(index);
+			 currentProperties.setTitle("This new name is " + index + " run.");
+			 currentProperties.setRunTime(index * (int) (Math.random() * 300));
+			 	//good for remove, replace, change multiple values
+			 
+			 
+	//		 currentProperties.setTitle(index * currentProperties.getTitle());
+			 
+		 }
+		 
+		 //backwards loop, great for removing
+		 for (int index = myThings.size() -1; index >= 0; index -= 1)
+		 {
+			 
+		 }
+		 
+		 for (Properties current : myThings) //for each loops are good for reporting data-not changing anything
+		 {
+			 JOptionPane.showMessageDialog(null, current.getTitle());
+			 //this pulls the name from the current things and displays it
+		 }
+
+	}
+	
+	
 	/**
 	 * (this is a java doc) to write API (documentation of how to write/use the
 	 * code) The constructor builds the instance of the Controller
