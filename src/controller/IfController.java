@@ -49,9 +49,12 @@ public class IfController
 		
 			
 	}
-	
+	/**listExample()
+	 *  -creates an array list and fills it with fruit names. It then proceeds to demonstrate the add, remove, and set processes
+	 */
 	private void listExample()
 	{
+
 		ArrayList <String> alist = new ArrayList<String>();//doesn't have to be string- can be Duck, or Mouse, or Apostrophe
 		alist.add("banana"); //adds "banana" to the end of the list
 		alist.add("strawberry");
@@ -65,7 +68,11 @@ public class IfController
 		JOptionPane.showMessageDialog(null,alist);
 		
 		
-		alist.remove("blueberry");
+		alist.remove("blueberry"); 
+		/**
+		 * .remove returns what was in the spot that was just taken out--and shrinks down by one
+		 * .set also returns this value but it replaces the value with something else
+		 */
 		alist.remove(0); //removes 1st element
 		JOptionPane.showMessageDialog(null,alist);
 		
