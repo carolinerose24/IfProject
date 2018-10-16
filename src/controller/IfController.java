@@ -16,14 +16,14 @@ public class IfController
 	public void start()
 	{
 		
-		listExample();
-		listExample2();
+//		listExample();
+//		listExample2();
 		
 //		start1();
 		// forPractice();
 		// askUser();
 	//	 Looooop2();
-		// myLooooop();
+		 myLooooop();
 	//	 JOptionPane.showMessageDialog(null, myProperties); //THIS WOULD PRINT THE
 		// DEFAULT VALUES!!!
 		 
@@ -209,7 +209,7 @@ public class IfController
 	{
 		boolean isDone = false; // DEFINE VARIABLES BEFORE LOOP (INITIALIZE)
 		int count = 0;
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------WHILE
 		while (!isDone) // THE CONDITION
 		// executes for as long as the condition is true--as long as isDone is false =>
 		// so infinite
@@ -229,6 +229,7 @@ public class IfController
 			// times something happens)
 
 		}
+		//-----------------------------------------------------------------------------------------------------------------------------------------------------FOR
 
 		for (int loop = 0; loop < 30; loop += 2) // can add by anything example +=18
 		{
@@ -263,7 +264,8 @@ public class IfController
 		String answeryes = "yes";
 		String responseTitle = JOptionPane.showInputDialog("What is the title?");
 		if (responseTitle == null || responseTitle.equals(""))
-		{
+		{//-----------------------------------------------------------------------------------------------------------------------------------------------------IF
+
 			JOptionPane.showMessageDialog(null, "You either pressed cancel, the x, or typed nothing!");
 			responseTitle = JOptionPane.showInputDialog("What is the title?");
 		}
