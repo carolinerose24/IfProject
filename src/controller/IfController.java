@@ -17,13 +17,13 @@ public class IfController
 	{
 		
 //		listExample();
-//		listExample2();
+		listExample2();
 		
 //		start1();
 		// forPractice();
-		// askUser();
+	//	 askUser();
 	//	 Looooop2();
-		 myLooooop();
+//		 myLooooop();
 	//	 JOptionPane.showMessageDialog(null, myProperties); //THIS WOULD PRINT THE
 		// DEFAULT VALUES!!!
 		 
